@@ -30,7 +30,7 @@ from operator import itemgetter
 
 DEBUG = 1
 #CORPUS = "usaa_notags.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
-CORPUS = "wp_complete.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
+CORPUS = "wp_complete.txt"      #  Source: http://www2.hn.psu.edu/faculty/jmanis/tolstoy/w&p_complete.pdf
 CORPUS_CHARS = 10000000
 CIPHER = """
 |de|  | f|Cl|nf|ed|au| i|ti|  |ma|ha|or|nn|ou| S|on|nd|on|
