@@ -7,7 +7,7 @@
 (1) Builds list of character n-grams, where n is the size of the shredded columns
     In the case of the AI class NLP, these are character bigrams.
  
-(2) Calculate probability table.  For each column find the probability of the 
+(2) Calculates probability table.  For each column find the probability of the 
     column coming after or before the other columns -- take the product of 
     probabilities over the column. 
     For example, given bigram of "de", what is the probability of the next 
@@ -15,14 +15,14 @@
     P (wn | wn-1) eg ("nf"|"de")
     C(wn-1 wn) / C(wn)
 
-(3) Sort each column's neighbors for before and after so the most likely 
+(3) Sorts each column's neighbors for before and after so the most likely 
     connection is earliest.
 
-(3) Starting with the strongest connection, build onto the sequence either 
-    left or right based on the next most likely bigram connection, until 
+(3) Starting with the strongest connection, builds onto the sequence either 
+    to the left or right based on the next most likely bigram connection, until 
     all columns are marked.  
 
-(4) Print the sequence.
+(4) Prints the sequence.
 """
 
 import re
