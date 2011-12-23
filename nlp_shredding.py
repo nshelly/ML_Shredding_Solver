@@ -29,7 +29,8 @@ import re
 from operator import itemgetter
 
 DEBUG = 1
-CORPUS = "usaa_notags.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
+#CORPUS = "usaa_notags.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
+CORPUS = "wp_complete.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
 CORPUS_CHARS = 10000000
 CIPHER = """
 |de|  | f|Cl|nf|ed|au| i|ti|  |ma|ha|or|nn|ou| S|on|nd|on|
@@ -48,7 +49,8 @@ class ShreddedMessage:
 
     def __init__(self, CIPHER):
         with open(CORPUS, 'r') as f:
-            corpus = f.read().replace('\n','_')
+            corpus = f.read()
+            corpus = re.sub('[^a-z\n|]', SPACE, corpus.lower())
         words = corpus[:CORPUS_CHARS]
         if DEBUG:
             print "Building bigrams for corpus (%d characters)..." % len(corpus)
