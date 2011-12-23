@@ -18,9 +18,9 @@
 (3) Sorts each column's neighbors for before and after so the most likely 
     connection is earliest.
 
-(3) Starting with the strongest connection, builds onto the sequence either 
-    to the left or right based on the next most likely bigram connection, until 
-    all columns are marked.  
+(3) Starting with the strongest connection, the greedy algorithm
+    builds onto the sequence either to the left or right based on the next 
+    most likely bigram connection, until all columns are marked.  
 
 (4) Prints the sequence.
 """
@@ -29,8 +29,7 @@ import re
 from operator import itemgetter
 
 DEBUG = 1
-CORPUS = "usaa_notags.txt"
-# Text source: http://www.comp.leeds.ac.uk/eric/db32/us/
+CORPUS = "usaa_notags.txt"      #  Source: http://www.comp.leeds.ac.uk/eric/db32/us/
 CORPUS_CHARS = 10000000
 CIPHER = """
 |de|  | f|Cl|nf|ed|au| i|ti|  |ma|ha|or|nn|ou| S|on|nd|on|
@@ -42,9 +41,8 @@ CIPHER = """
 |ry|d |un|Th|" |io|eo|n,|is|  |bl|f |pu|Co|ic| o|he|at|mm|
 |hi|  |  |in|  |  | t|  |  |  |  |ye|  |ar|  |s |  |  |. |"""
 SPACE= "_"
-N = 2        # Number of in characters in slice
-# For Laplace Smoothing
-ALPHA = 1.0
+N = 2        # Number of characters in slice
+ALPHA = 1.0  # For Laplace Smoothing
 
 class ShreddedMessage: 
 
